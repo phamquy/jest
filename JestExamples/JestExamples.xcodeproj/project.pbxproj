@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34554C20E658EB73A9CF62F8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A0D5A041152D063C34D72D7 /* libPods.a */; };
 		6914989719FA15F20051F41C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914989619FA15F20051F41C /* AppDelegate.swift */; };
 		6914989919FA15F20051F41C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6914989819FA15F20051F41C /* ViewController.swift */; };
 		6914989C19FA15F20051F41C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6914989A19FA15F20051F41C /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A0D5A041152D063C34D72D7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6914989119FA15F20051F41C /* JestExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JestExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6914989519FA15F20051F41C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6914989619FA15F20051F41C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		691498A619FA15F20051F41C /* JestExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JestExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		691498AB19FA15F20051F41C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		691498AC19FA15F20051F41C /* JestExamplesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JestExamplesTests.swift; sourceTree = "<group>"; };
+		AFEE9BE992FF187147C2FFCA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D397F4FB9A361C42D5FA49E8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34554C20E658EB73A9CF62F8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 				6914989319FA15F20051F41C /* JestExamples */,
 				691498A919FA15F20051F41C /* JestExamplesTests */,
 				6914989219FA15F20051F41C /* Products */,
+				734656E92236090D550E0689 /* Pods */,
+				B05F8B93DC0851F42A7B2B32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +119,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		734656E92236090D550E0689 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFEE9BE992FF187147C2FFCA /* Pods.debug.xcconfig */,
+				D397F4FB9A361C42D5FA49E8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B05F8B93DC0851F42A7B2B32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A0D5A041152D063C34D72D7 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 691498B019FA15F20051F41C /* Build configuration list for PBXNativeTarget "JestExamples" */;
 			buildPhases = (
+				08EDFBDD8E797915558A93F7 /* Check Pods Manifest.lock */,
 				6914988D19FA15F20051F41C /* Sources */,
 				6914988E19FA15F20051F41C /* Frameworks */,
 				6914988F19FA15F20051F41C /* Resources */,
+				8C3ABD83C299F497649C4AEB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +232,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08EDFBDD8E797915558A93F7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8C3ABD83C299F497649C4AEB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6914988D19FA15F20051F41C /* Sources */ = {
@@ -336,6 +395,7 @@
 		};
 		691498B119FA15F20051F41C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFEE9BE992FF187147C2FFCA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JestExamples/Info.plist;
@@ -346,6 +406,7 @@
 		};
 		691498B219FA15F20051F41C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D397F4FB9A361C42D5FA49E8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JestExamples/Info.plist;
@@ -407,6 +468,7 @@
 				691498B219FA15F20051F41C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		691498B319FA15F20051F41C /* Build configuration list for PBXNativeTarget "JestExamplesTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +477,7 @@
 				691498B519FA15F20051F41C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
