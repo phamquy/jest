@@ -13,7 +13,7 @@
 /**
  Implementation of `NKApiMapper`, which uses external json file as descriptor, this mapper will read content of external json and construct an array of `NKResponseDescriptor`.
  */
-@interface NKExternalizeJsonMapper : NSObject <NKApiMapper>
+@interface JKExternalizeJsonMapper : NSObject <NKApiMapper>
 /**
  Utilities class methods to create mapper
  */

@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 SK Planet. All rights reserved.
 //
 
-#import "RKMapping+NKExternalize.h"
-#import "NKExternalMapperDict.h"
-#import "NKApiHelper.h"
+#import "RKMapping+Jest.h"
+#import "JKExternalMapperDict.h"
+#import "JKHelper.h"
+#import <RestKit/Network.h>
 
 @implementation RKMapping (NKExternalize)
 + (RKMapping*) requestMapFromDictionary:(NSDictionary*) mapDict

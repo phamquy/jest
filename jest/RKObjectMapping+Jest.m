@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 SK Planet. All rights reserved.
 //
 
-#import "RKObjectMapping+NKExternalize.h"
+#import "RKObjectMapping+Jest.h"
 
 @implementation RKObjectMapping (NKExternalize)
 //------------------------------------------------------------------------------

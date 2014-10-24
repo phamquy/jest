@@ -5,31 +5,28 @@
 //  Created by jack on 6/17/14.
 //  Copyright (c) 2014 SK Planet. All rights reserved.
 //
-
-#import "NKApiHelper.h"
-#import "NKExternalizeJsonMapper.h"
-#import "NKApiMappingProtocol.h"
-#import "NKApiDict.h"
-#import "NKModel.h"
+#import "JKHelper.h"
+#import "JKExternalizeJsonMapper.h"
+#import "JKApiMappingProtocol.h"
 #import "RKPathMatcher.h"
-#import "NKExternalMapperDict.h"
-#import "RKMapping+NKExternalize.h"
-#import "RKObjectMapping+NKExternalize.h"
-#import "RKDynamicMapping+NKExternalize.h"
+#import "JKExternalMapperDict.h"
+#import "RKMapping+Jest.h"
+#import "RKObjectMapping+Jest.h"
+#import "RKDynamicMapping+Jest.h"
 
-@interface NKExternalizeJsonMapper ()
+@interface JKExternalizeJsonMapper ()
 {
     NSMutableArray* _resDescriptors;
     NSMutableArray* _reqDescriptors;
 }
 @end
 
-@implementation NKExternalizeJsonMapper
+@implementation JKExternalizeJsonMapper
 
 + (instancetype) mapperWithFileInFolder:(NSString*) folderPath
 {
-    NKExternalizeJsonMapper* mapper =
-        [[NKExternalizeJsonMapper alloc] initWithFileInPath:folderPath];
+    JKExternalizeJsonMapper* mapper =
+        [[JKExternalizeJsonMapper alloc] initWithFileInPath:folderPath];
 
     return mapper;
 }
@@ -37,16 +34,16 @@
 //------------------------------------------------------------------------------
 + (instancetype) mapperWithFile:(NSString*) filePath
 {
-    NKExternalizeJsonMapper* mapper =
-        [[NKExternalizeJsonMapper alloc] initWithFile:filePath];
+    JKExternalizeJsonMapper* mapper =
+        [[JKExternalizeJsonMapper alloc] initWithFile:filePath];
     return mapper;
 }
 
 //------------------------------------------------------------------------------
 + (instancetype) mapperWithJson:(NSString*) jsonStr
 {
-    NKExternalizeJsonMapper* mapper =
-        [[NKExternalizeJsonMapper alloc] initWithJson:jsonStr];
+    JKExternalizeJsonMapper* mapper =
+        [[JKExternalizeJsonMapper alloc] initWithJson:jsonStr];
     return mapper;
 }
 

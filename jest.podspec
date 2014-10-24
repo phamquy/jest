@@ -12,4 +12,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.public_header_files = 'jest/*.h'
   s.source_files  = 'jest'
+  
+  s.prefix_header_contents = '#import <CoreData/CoreData.h>'
 end

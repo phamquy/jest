@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 SK Planet. All rights reserved.
 //
 
-#import "RKDynamicMapping+NKExternalize.h"
+#import "RKDynamicMapping+Jest.h"
 
 @implementation RKDynamicMapping(NKExternalize)
 - (void) addMatcherForKeyPath: (NSString*) keyPath
