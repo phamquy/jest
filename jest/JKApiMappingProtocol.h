@@ -3,12 +3,25 @@
 //  nk-common
 //
 //  Created by jack on 6/12/14.
-//  Copyright (c) 2014 SK Planet. All rights reserved.
+//  Copyright (c) 2014 Jest. All rights reserved.
 //
-#import <RestKit/RestKit.h>
-//@class RKResponseDescriptor;
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 
-@protocol NKApiMapper <NSObject>
+
+
+#import <RestKit/RestKit.h>
+
+@protocol JKApiMapper <NSObject>
 @required
 /**
   Return response descriptor for a given request. This method inspects attribute of the request such as path, HTTP method, or even parameter have enough information about what response the client should expect to receive, and create response descriptor to mapp server response to internal data model.
@@ -31,4 +44,4 @@
 
 @end
 
-typedef id<NKApiMapper> NKApiMapperImpl;
+typedef id<JKApiMapper> JKApiMapperImpl;
