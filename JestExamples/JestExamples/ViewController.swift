@@ -92,23 +92,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let client : AFHTTPClient = AFHTTPClient(baseURL: baseURL)
     
         let objectManager : RKObjectManager = RKObjectManager(HTTPClient: client)
-        let venueMapping : RKObjectMapping = RKObjectMapping(forClass: Venue.self)
         
-        venueMapping.addAttributeMappingsFromArray(["name"])
-        
-        let locationMapping = RKObjectMapping(forClass: Location.self)
-        locationMapping.addAttributeMappingsFromArray(["address", "city", "country", "crossStreet", "postalCode", "state", "distance", "lat", "lng"])
-        
-        let statsMapping = RKObjectMapping(forClass: Stats.self)
-        statsMapping.addAttributeMappingsFromDictionary(["checkinsCount": "checkins", "tipsCount": "tips", "usersCount": "users"])
-        
-        venueMapping.addPropertyMapping(RKRelationshipMapping(fromKeyPath: "location", toKeyPath: "location", withMapping: locationMapping))
-        venueMapping.addPropertyMapping(RKRelationshipMapping(fromKeyPath: "stats", toKeyPath: "stats", withMapping: statsMapping))
-        
-        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: venueMapping, method: RKRequestMethod.GET, pathPattern: "/v2/venues/search", keyPath: "response.venues", statusCodes: NSIndexSet(index: 200))
+//        let venueMapping : RKObjectMapping = RKObjectMapping(forClass: Venue.self)
+//        venueMapping.addAttributeMappingsFromArray(["name"])
+//        
+//        let locationMapping = RKObjectMapping(forClass: Location.self)
+//        locationMapping.addAttributeMappingsFromArray(["address", "city", "country", "crossStreet", "postalCode", "state", "distance", "lat", "lng"])
+//        
+//        let statsMapping = RKObjectMapping(forClass: Stats.self)
+//        statsMapping.addAttributeMappingsFromDictionary(["checkinsCount": "checkins", "tipsCount": "tips", "usersCount": "users"])
+//        
+//        venueMapping.addPropertyMapping(RKRelationshipMapping(fromKeyPath: "location", toKeyPath: "location", withMapping: locationMapping))
+//        venueMapping.addPropertyMapping(RKRelationshipMapping(fromKeyPath: "stats", toKeyPath: "stats", withMapping: statsMapping))
+//        
+//        let responseDescriptor : RKResponseDescriptor = RKResponseDescriptor(mapping: venueMapping, method: RKRequestMethod.GET, pathPattern: "/v2/venues/search", keyPath: "response.venues", statusCodes: NSIndexSet(index: 200))
 
-        objectManager.addResponseDescriptor(responseDescriptor);
-        
+        let filePath =  NSBundle.mainBundle().pathForResource("map", ofType: "json")
+        let jsonExMaps = JKExternalizeJsonMapper(file: filePath)
+        objectManager.addResponseDescriptorsFromArray(jsonExMaps.responseDescriptors())
     }
     
     //--------------------------------------------------------------------------

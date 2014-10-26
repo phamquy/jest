@@ -193,6 +193,8 @@
         else if ([object isKindOfClass:[NSDictionary class]])
         {
             [attributeDict addEntriesFromDictionary:object];
+        }else if ([object isKindOfClass:[NSString class]]){
+            [attributeDict addEntriesFromDictionary:@{object:object}];
         }
     }
     

@@ -12,7 +12,7 @@
             "maps": [
                 {	
                      "id": "venueMap",
-                     "targetName": "Venue",
+                     "targetName": "JestExamples.Venue",
                      "attributes": ["name"],
                      "relationships" : [
                         {"from" : "location", "to" : "location", "map-ref" : "locationMap"},
@@ -22,12 +22,12 @@
                 },
              {
                  "id": "locationMap",
-                 "targetName": "Location",
+                 "targetName": "JestExamples.Location",
                  "attributes": ["address", "city", "country", "crossStreet", "postalCode", "state", "distance", "lat", "lng"]
              },
              {
                  "id": "statsMap",
-                 "targetName": "Stats",
+                 "targetName": "JestExamples.Stats",
                  "attributes": {
                      "checkinsCount" : "checkins",
                      "tipsCount" : "tips",
