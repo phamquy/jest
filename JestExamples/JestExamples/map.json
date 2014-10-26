@@ -1,0 +1,41 @@
+{
+    "responseDescriptors": [
+        {
+            "requests": [
+                {
+                    "path": "/v2/venues/search",
+                    "keyPath": "response.venues",
+                    "root-map-ref": "venueMap",
+                    "statusCodes": ["2XX"]
+                }
+            ],
+            "maps": [
+                {	
+                     "id": "venueMap",
+                     "targetName": "Venue",
+                     "attributes": ["name"],
+                     "relationships" : [
+                        {"from" : "location", "to" : "location", "map-ref" : "locationMap"},
+                        {"from" : "stats", "to" : "stats", "map-ref" : "statsMap"}
+                     ]
+					
+                },
+             {
+                 "id": "locationMap",
+                 "targetName": "Location",
+                 "attributes": ["address", "city", "country", "crossStreet", "postalCode", "state", "distance", "lat", "lng"]
+             },
+             {
+                 "id": "statsMap",
+                 "targetName": "Stats",
+                 "attributes": {
+                     "checkinsCount" : "checkins",
+                     "tipsCount" : "tips",
+                     "usersCount" : "users"
+                 }
+             }
+                     
+            ]
+        }
+    ]
+}

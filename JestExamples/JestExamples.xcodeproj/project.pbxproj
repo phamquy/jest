@@ -14,6 +14,11 @@
 		6914989E19FA15F20051F41C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6914989D19FA15F20051F41C /* Images.xcassets */; };
 		691498A119FA15F20051F41C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6914989F19FA15F20051F41C /* LaunchScreen.xib */; };
 		691498AD19FA15F20051F41C /* JestExamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691498AC19FA15F20051F41C /* JestExamplesTests.swift */; };
+		699C3C5419FD334C00425C4C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C3C5319FD334C00425C4C /* Location.swift */; };
+		699C3C5619FD347500425C4C /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C3C5519FD347500425C4C /* Stats.swift */; };
+		699C3C5819FD34F100425C4C /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C3C5719FD34F100425C4C /* Venue.swift */; };
+		699C3C5A19FD357200425C4C /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699C3C5919FD357200425C4C /* VenueCell.swift */; };
+		699C3C5D19FD4B7000425C4C /* map.json in Resources */ = {isa = PBXBuildFile; fileRef = 699C3C5C19FD4B7000425C4C /* map.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,12 @@
 		691498A619FA15F20051F41C /* JestExamplesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JestExamplesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		691498AB19FA15F20051F41C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		691498AC19FA15F20051F41C /* JestExamplesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JestExamplesTests.swift; sourceTree = "<group>"; };
+		699C3C5319FD334C00425C4C /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		699C3C5519FD347500425C4C /* Stats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		699C3C5719FD34F100425C4C /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		699C3C5919FD357200425C4C /* VenueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCell.swift; sourceTree = "<group>"; };
+		699C3C5C19FD4B7000425C4C /* map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = map.json; sourceTree = "<group>"; };
+		69E890AA19FA319B00E6D19B /* JestExamples-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JestExamples-Bridging-Header.h"; sourceTree = "<group>"; };
 		AFEE9BE992FF187147C2FFCA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D397F4FB9A361C42D5FA49E8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,12 +95,15 @@
 		6914989319FA15F20051F41C /* JestExamples */ = {
 			isa = PBXGroup;
 			children = (
+				699C3C5B19FD4B0700425C4C /* JsonMapping */,
+				69E890B719FA562900E6D19B /* Models */,
 				6914989619FA15F20051F41C /* AppDelegate.swift */,
 				6914989819FA15F20051F41C /* ViewController.swift */,
 				6914989A19FA15F20051F41C /* Main.storyboard */,
 				6914989D19FA15F20051F41C /* Images.xcassets */,
 				6914989F19FA15F20051F41C /* LaunchScreen.xib */,
 				6914989419FA15F20051F41C /* Supporting Files */,
+				69E890AA19FA319B00E6D19B /* JestExamples-Bridging-Header.h */,
 			);
 			path = JestExamples;
 			sourceTree = "<group>";
@@ -117,6 +131,25 @@
 				691498AB19FA15F20051F41C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		699C3C5B19FD4B0700425C4C /* JsonMapping */ = {
+			isa = PBXGroup;
+			children = (
+				699C3C5C19FD4B7000425C4C /* map.json */,
+			);
+			name = JsonMapping;
+			sourceTree = "<group>";
+		};
+		69E890B719FA562900E6D19B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				699C3C5319FD334C00425C4C /* Location.swift */,
+				699C3C5519FD347500425C4C /* Stats.swift */,
+				699C3C5719FD34F100425C4C /* Venue.swift */,
+				699C3C5919FD357200425C4C /* VenueCell.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		734656E92236090D550E0689 /* Pods */ = {
@@ -220,6 +253,7 @@
 			files = (
 				6914989C19FA15F20051F41C /* Main.storyboard in Resources */,
 				691498A119FA15F20051F41C /* LaunchScreen.xib in Resources */,
+				699C3C5D19FD4B7000425C4C /* map.json in Resources */,
 				6914989E19FA15F20051F41C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +306,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6914989919FA15F20051F41C /* ViewController.swift in Sources */,
+				699C3C5819FD34F100425C4C /* Venue.swift in Sources */,
+				699C3C5A19FD357200425C4C /* VenueCell.swift in Sources */,
+				699C3C5619FD347500425C4C /* Stats.swift in Sources */,
 				6914989719FA15F20051F41C /* AppDelegate.swift in Sources */,
+				699C3C5419FD334C00425C4C /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,9 +436,12 @@
 			baseConfigurationReference = AFEE9BE992FF187147C2FFCA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = JestExamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JestExamples/JestExamples-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -409,9 +450,11 @@
 			baseConfigurationReference = D397F4FB9A361C42D5FA49E8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = JestExamples/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "JestExamples/JestExamples-Bridging-Header.h";
 			};
 			name = Release;
 		};
