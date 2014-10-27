@@ -71,7 +71,7 @@ Jest can descript the basic mapping supportted by Restkit:
 - Relationship mapping
 - Dynamic mapping
 
-For others special case please check out Examples.md
+For others special case please check out [Examples.md](https://github.com/phamquy/jest/blob/master/Examples.md)
 
 **How to integrate ?**
 
