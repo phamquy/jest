@@ -101,9 +101,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private func loadVenues()
     {
         let latLon : String = "37.33,-122.03"
-        let clientId : String = kCLIENTID;
-        let clientSecret : String = kCLIENTSECRET;
-        let queryParams : NSDictionary = ["ll" : latLon,"client_id": clientId, "client_secret" : clientSecret, "categoryId" : "4bf58dd8d48988d1e0931735", "v": "20140118"]
+        let clientId : String = kCLIENTID
+        let clientSecret : String = kCLIENTSECRET
+        
+        let queryParams : NSDictionary = [
+            "ll" : latLon,
+            "client_id": clientId,
+            "client_secret" : clientSecret,
+            "categoryId" : "4bf58dd8d48988d1e0931735",
+            "v": "20140118"]
         
         
         weak var wself = self;
