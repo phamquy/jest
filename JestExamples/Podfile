@@ -1,5 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
 workspace 'JestExamples'
 
 xcodeproj 'JestExamples'
 platform :ios, '7.0'
-pod 'jest', :path => '../'
+pod 'jest', :path => './jest.podspec'

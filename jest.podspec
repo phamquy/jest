@@ -4,7 +4,8 @@ Pod::Spec.new do |s|
   s.summary      = "RestKit mapping descriptors."
   s.homepage     = "http://phamquy.github.io/jest/"
   s.author       = { "Jackode" => "psyquy@gmail.com" }
-
+  s.license          =  'Apache License, Version 2.0'
+  
   s.ios.deployment_target = '5.0'
   s.platform = :ios, '5.0'
   s.dependency 'RestKit', '~> 0.23'  

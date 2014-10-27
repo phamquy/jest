@@ -2,7 +2,7 @@ PODS:
   - AFNetworking (1.3.4)
   - ISO8601DateFormatterValueTransformer (0.6.0):
     - RKValueTransformers (~> 1.1.0)
-  - jest (0.0.1):
+  - jest (0.1.0):
     - RestKit (~> 0.23)
   - RestKit (0.23.3):
     - RestKit/Core
@@ -28,16 +28,16 @@ PODS:
   - TransitionKit (2.1.0)
 
 DEPENDENCIES:
-  - jest (from `../`)
+  - jest (from `./jest.podspec`)
 
 EXTERNAL SOURCES:
   jest:
-    :path: ../
+    :path: ./jest.podspec
 
 SPEC CHECKSUMS:
   AFNetworking: 80c4e0652b08eb34e25b9c0ff3c82556fe5967b4
   ISO8601DateFormatterValueTransformer: a705384ea6531255258e25b6480ba1180db703a0
-  jest: 2a95bd3d61a70f7c757e66d44db6f9687733ed7c
+  jest: 0477dfa5044e006addaa95ba56cdcc48a056e4d3
   RestKit: 193a35cddae5198388977abaedad129f8acb978b
   RKValueTransformers: b705e7b4651b9206b94600408462b74554bba969
   SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
