@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "jest"
-  s.version      = "0.0.1"
+  s.version      = "0.1.0"
   s.summary      = "RestKit mapping descriptors."
   s.homepage     = "http://phamquy.github.io/jest/"
   s.author       = { "Jackode" => "psyquy@gmail.com" }
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.framework  = 'CoreData'
   s.requires_arc = true
   s.public_header_files = 'jest/*.h'
+  s.source =  { :git => 'https://github.com/phamquy/jest.git', :tag => "v#{s.version}" }
   s.source_files  = 'jest/*.{h,m}'
-  
   s.prefix_header_contents = '#import <CoreData/CoreData.h>'
 end
