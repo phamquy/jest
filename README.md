@@ -1,7 +1,7 @@
 jest
 ====
 
-** Why did I make this? **
+**Why did I make this?**
 
 RestKit is a great and well design framework and reduce alot of your code when you need to work with your server's REST api. However, your server REST api need to be well design the response should be well-structure JSON/XML data.
 
@@ -14,7 +14,8 @@ Here are some reason that make writing RestKit mapping a painful task:
 3. Inconsistent data format
 
 
-** How Jest may release your pain? **
+**How Jest may release your pain?**
+
 Instead of tangling my code with object mapping, with Jest, i can put all of my mapping into json file. Object mappings will be written in expressive json objects.
 
 Here is a quick example: 
@@ -63,7 +64,7 @@ Here is a quick example:
 }
 ```
 
-** Features **
+**Jest and Restkit**
 
 Jest can descript the basic mapping supportted by Restkit:
 - Object/Managed object mapping
