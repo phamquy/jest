@@ -120,6 +120,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 parameters: queryParams,
                 success: {
                     (response: RKObjectRequestOperation!, mappingResult: RKMappingResult!) -> Void in
+                    
                     let strongSelf = wself
                     strongSelf?.venues = mappingResult.array()
                     strongSelf?.tableView.reloadData()
