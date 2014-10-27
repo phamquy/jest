@@ -73,5 +73,11 @@ Jest can descript the basic mapping supportted by Restkit:
 
 For others special case please check out Examples.md
 
+**How to integrate ?**
+
+1. Use cocoapod: pod 'jest', '~> 0.1'
+2. Check out this repo
+3. Download release zip file
+
 
 
