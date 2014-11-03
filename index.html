@@ -37,9 +37,9 @@
 <h3>
 <a name="why-did-i-make-this" class="anchor" href="#why-did-i-make-this"><span class="octicon octicon-link"></span></a>Why did I make this?</h3>
 
-<p>RestKit is a great and well design framework and reduce alot of your code when you need to work with your server's REST api. However, your server REST api need to be well design the response should be well-structure JSON/XML data.</p>
+<p>RestKit is a great and well design framework and reduce alot of your code when you need to work with your server's REST api. However, your server REST api need to be well designed and the responses should be well-structure JSON/XML data.</p>
 
-<p>In some of my past project, when I had to work with a server api that doesnt have that well-design, writing RestKit mapping is as time consuming as write code to directly parse the raw response. It's even worse in some case that server doesnt have a consistent vocabulary (using diffent keys for the same data property). In such the case, you most likely have to write different object mapping for each API path.</p>
+<p>In some of my past project, when I had to work with a server api that didnt have that quality, writing RestKit mapping is as time consuming as write code to directly parse the raw response. It's even worse in some case that server doesnt have a consistent vocabulary (using different keys for the same data property). In such the case, you most likely have to write/rewrite different object mappings for each API points.</p>
 
 <p>Here are some reason that make writing RestKit mapping a painful task:</p>
 
@@ -52,7 +52,7 @@
 <h3>
 <a name="how-jest-may-release-your-pain" class="anchor" href="#how-jest-may-release-your-pain"><span class="octicon octicon-link"></span></a>How Jest may release your pain?</h3>
 
-<p>Instead of tangling my code with object mapping, with Jest, i can put all of my mapping into json file. Object mappings will be written in expressive json objects.</p>
+<p>Instead of tangling my code with object mapping, with Jest, i can put all of my mapping into json file. Object mappings will be written in expressive json objects, so that you can put all the mess out of your source code into json. Because of the expressiveness of the description file, writing those mappings will less painful than writing in code.</p>
 
 <p>Here is a quick example: </p>
 
@@ -102,7 +102,7 @@
 <h3>
 <a name="jest-and-restkit" class="anchor" href="#jest-and-restkit"><span class="octicon octicon-link"></span></a>Jest and Restkit</h3>
 
-<p>Jest can descript the basic mapping supportted by Restkit:</p>
+<p>Jest can describe mapping supported by Restkit:</p>
 
 <ul>
 <li>Object/Managed object mapping</li>
@@ -110,7 +110,7 @@
 <li>Dynamic mapping</li>
 </ul>
 
-<p>For others special case please check out <a href="https://github.com/phamquy/jest/blob/master/Examples.md">Examples.md</a></p>
+<p>Take a look at <a href="https://github.com/phamquy/jest/blob/master/Examples.md">Examples.md</a> to see how to handle most of common cases.</p>
 
 <h3>
 <a name="how-to-integrate-" class="anchor" href="#how-to-integrate-"><span class="octicon octicon-link"></span></a>How to integrate ?</h3>
