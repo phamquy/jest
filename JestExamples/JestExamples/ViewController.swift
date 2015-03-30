@@ -93,7 +93,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
         let objectManager : RKObjectManager = RKObjectManager(HTTPClient: client)
         let filePath =  NSBundle.mainBundle().pathForResource("map", ofType: "json")
-        let jsonExMaps = JKExternalizeJsonMapper(file: filePath)
+//        let jsonExMaps = JKExternalizeJsonMapper(file: filePath)
+        let jsonExMaps = JKExternalizeJsonMapper(file: filePath, objectStore: nil);
         objectManager.addResponseDescriptorsFromArray(jsonExMaps.responseDescriptors())
     }
     
