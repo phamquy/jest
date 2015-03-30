@@ -3,4 +3,4 @@ workspace 'JestExamples'
 
 xcodeproj 'JestExamples'
 platform :ios, '7.0'
-pod 'jest', :path => './jest.podspec'
+pod 'jest', :path => '../jest.podspec'
