@@ -18,19 +18,23 @@
 //  limitations under the License.
 
 #import <Foundation/Foundation.h>
-
+@class RKManagedObjectStore;
 @protocol JKApiMapper;
 
 /**
  Implementation of `NKApiMapper`, which uses external json file as descriptor, this mapper will read content of external json and construct an array of `NKResponseDescriptor`.
  */
 @interface JKExternalizeJsonMapper : NSObject <JKApiMapper>
+
 /**
  Utilities class methods to create mapper
  */
-+ (instancetype) mapperWithFileInFolder:(NSString*) folderPath;
-+ (instancetype) mapperWithFile:(NSString*) filePath;
-+ (instancetype) mapperWithJson:(NSString*) jsonStr;
++ (instancetype) mapperWithFileInFolder:(NSString*) folderPath
+                            objectStore:(RKManagedObjectStore*) objectStore;
++ (instancetype) mapperWithFile:(NSString*) filePath
+                    objectStore:(RKManagedObjectStore*) objectStore;
++ (instancetype) mapperWithJson:(NSString*) jsonStr
+                    objectStore:(RKManagedObjectStore*) objectStore;
 
 
 
@@ -43,20 +47,20 @@
  
  @param folderPath path of folder that contains descriptor files
  */
-- (instancetype) initWithFileInPath:(NSString*) folderPath;
+- (instancetype) initWithFileInPath:(NSString*) folderPath objectStore:(RKManagedObjectStore*) objectStore;;
 
 /**
  This initializer read content of file at given path and construct response desrciptors
  
  @param filePath path of input file
  */
-- (instancetype) initWithFile:(NSString*) filePath;
+- (instancetype) initWithFile:(NSString*) filePath objectStore:(RKManagedObjectStore*) objectStore;;
 
 /**
  if you already have a descriptor string inmemory in form of a `NSString`, use this initializer to construct the mapper
  
  @param jsonString input json string
  */
-- (instancetype) initWithJson:(NSString*) jsonString;
+- (instancetype) initWithJson:(NSString*) jsonString objectStore:(RKManagedObjectStore*) objectStore;;
 @end
 

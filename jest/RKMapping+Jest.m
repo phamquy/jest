@@ -23,6 +23,7 @@
 
 @implementation RKMapping (Jest)
 + (RKMapping*) requestMapFromDictionary:(NSDictionary*) mapDict
+                            objectStore:(RKManagedObjectStore *)objectStore
 {
     NSMutableDictionary* attributeDict = [NSMutableDictionary dictionary];
     id attributes = [mapDict objectForKey:NKDescriptorMapAttributes];
@@ -79,6 +80,7 @@
 
 //------------------------------------------------------------------------------
 + (RKMapping*) responseMapFromDictionary:(NSDictionary *)mapDict
+                             objectStore:(RKManagedObjectStore *)objectStore
 {
     BOOL isEntity = [[mapDict objectForKey:NKDescriptorMapIsEntity ] boolValue];
     NSString* targetName  = [[mapDict objectForKey:NKDescriptorMapTargetName] noEmptyString];
@@ -126,15 +128,14 @@
     }else {
         if (isEntity)
         {
-            if ([[RKObjectManager sharedManager] managedObjectStore])
+            if (objectStore)
             {
-                NSEntityDescription* entityDesc = [self entityDescriptionFromTargetName:targetName];
+                NSEntityDescription* entityDesc = [self entityDescriptionFromTargetName:targetName objectStore:objectStore];
                 NSAssert1(entityDesc, @"Couldnt find entity description for name: %@", entityDesc);
                 if (entityDesc) {
                     mapping  =  [RKEntityMapping
                                  mappingForEntityForName:entityDesc.name
-                                 inManagedObjectStore:[[RKObjectManager sharedManager]
-                                                       managedObjectStore]];
+                                 inManagedObjectStore:objectStore];
                     if (attributeDict)
                     {
                         if (keyAttribute) {
@@ -206,11 +207,10 @@
 }
 
 //------------------------------------------------------------------------------
-+ (NSEntityDescription*) entityDescriptionFromTargetName:(NSString*) targetName
++ (NSEntityDescription*) entityDescriptionFromTargetName:(NSString*) targetName objectStore:(RKManagedObjectStore*) objectStore
 {
     NSEntityDescription* resultEntityDesc = nil;
-    RKManagedObjectStore* store = [[RKObjectManager sharedManager]
-                                   managedObjectStore];
+    RKManagedObjectStore* store = objectStore;
     NSArray* entitiNamesInStore = [[store.managedObjectModel entitiesByName] allKeys];
     
     // If target name is valid entity name, return it

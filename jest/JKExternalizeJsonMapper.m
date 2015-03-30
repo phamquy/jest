@@ -30,39 +30,43 @@
     NSMutableArray* _resDescriptors;
     NSMutableArray* _reqDescriptors;
 }
+@property (nonatomic, strong) RKManagedObjectStore* objectStore;
 @end
 
 @implementation JKExternalizeJsonMapper
 
 + (instancetype) mapperWithFileInFolder:(NSString*) folderPath
+                            objectStore:(RKManagedObjectStore*) objectStore
 {
     JKExternalizeJsonMapper* mapper =
-        [[JKExternalizeJsonMapper alloc] initWithFileInPath:folderPath];
-
+        [[JKExternalizeJsonMapper alloc] initWithFileInPath:folderPath objectStore:objectStore];
     return mapper;
 }
 
 //------------------------------------------------------------------------------
 + (instancetype) mapperWithFile:(NSString*) filePath
+                    objectStore:(RKManagedObjectStore*) objectStore
 {
     JKExternalizeJsonMapper* mapper =
-        [[JKExternalizeJsonMapper alloc] initWithFile:filePath];
+        [[JKExternalizeJsonMapper alloc] initWithFile:filePath objectStore:objectStore];
     return mapper;
 }
 
 //------------------------------------------------------------------------------
 + (instancetype) mapperWithJson:(NSString*) jsonStr
+                    objectStore:(RKManagedObjectStore*) objectStore
 {
     JKExternalizeJsonMapper* mapper =
-        [[JKExternalizeJsonMapper alloc] initWithJson:jsonStr];
+        [[JKExternalizeJsonMapper alloc] initWithJson:jsonStr objectStore:objectStore];
     return mapper;
 }
 
 //------------------------------------------------------------------------------
-- (instancetype) initWithFileInPath:(NSString*) folderPath
+- (instancetype) initWithFileInPath:(NSString*) folderPath objectStore:(RKManagedObjectStore*) objectStore
 {
     self = [super init];
     if (self) {
+        self.objectStore = objectStore;
         NSFileManager *fileManager = [NSFileManager defaultManager];
         
         // Check if given path is of a directory
@@ -93,11 +97,12 @@
 }
 
 //------------------------------------------------------------------------------
-- (instancetype) initWithFile:(NSString*) filePath
+- (instancetype) initWithFile:(NSString*) filePath objectStore:(RKManagedObjectStore*) objectStore
 {
     self = [super init];
     if (self) {
         BOOL isDir;
+        self.objectStore = objectStore;
         BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:filePath
                                                            isDirectory:&isDir];
         if (!exists || isDir) {
@@ -110,10 +115,11 @@
 }
 
 //------------------------------------------------------------------------------
-- (instancetype) initWithJson:(NSString*) jsonString
+- (instancetype) initWithJson:(NSString*) jsonString objectStore:(RKManagedObjectStore*) objectStore
 {
     self = [super init];
     if (self) {
+        self.objectStore = objectStore;
         [self addResponseDescriptorFromJsonString:jsonString];
     }
     return self;
@@ -245,7 +251,8 @@
     
     for (NSDictionary* mapDict in maps) {
         NSString* mapId  = [mapDict objectForKey:NKDescriptorMapId];
-        RKMapping* map = [RKMapping responseMapFromDictionary:mapDict];
+        RKMapping* map = [RKMapping responseMapFromDictionary:mapDict
+                                                  objectStore:self.objectStore];
         if (mapId && map) {
             [mappingDict setObject:map forKey:mapId];
         }
@@ -316,7 +323,8 @@
     
     for (NSDictionary* mapDict in maps) {
         NSString* mapId  = [mapDict objectForKey:NKDescriptorMapId];
-        RKMapping* map = [RKMapping requestMapFromDictionary:mapDict];
+        RKMapping* map = [RKMapping requestMapFromDictionary:mapDict
+                                                 objectStore:self.objectStore];
         if (mapId && map) {
             [mappingDict setObject:map forKey:mapId];
         }

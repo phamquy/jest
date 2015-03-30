@@ -20,8 +20,13 @@
 #import <RestKit/RestKit.h>
 
 @class RKMapping;
+@class RKManagedObjectStore;
 
 @interface RKMapping (Jest)
-+ (RKMapping*) responseMapFromDictionary:(NSDictionary*) mapDict;
-+ (RKMapping*) requestMapFromDictionary:(NSDictionary*) mapDict;
++ (RKMapping*) responseMapFromDictionary:(NSDictionary*) mapDict
+                             objectStore:(RKManagedObjectStore*) objectStore;
+
++ (RKMapping*) requestMapFromDictionary:(NSDictionary*) mapDict
+                            objectStore:(RKManagedObjectStore*) objectStore;;
+
 @end
