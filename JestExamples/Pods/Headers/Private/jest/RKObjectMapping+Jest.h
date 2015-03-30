@@ -1,0 +1,1 @@
+../../../../../jest/RKObjectMapping+Jest.h
