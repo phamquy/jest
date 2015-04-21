@@ -10,7 +10,7 @@ import Foundation
 
 class Venue : NSObject
 {
-    var name: NSString?
+    var name: String?
     var location: Location?
     var stats: Stats?
 }

@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell : VenueCell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath)
-         as VenueCell
+         as! VenueCell
         if let venue = self.venues?[indexPath.row] as? Venue{
             cell.nameLabel.text = venue.name;
             if let distance  = venue.location?.distance?.floatValue {
@@ -118,7 +118,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             .sharedManager()
             .getObjectsAtPath(
                 "/v2/venues/search",
-                parameters: queryParams,
+                parameters: queryParams as [NSObject : AnyObject],
                 success: {
                     (response: RKObjectRequestOperation!, mappingResult: RKMappingResult!) -> Void in
                     
